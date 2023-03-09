@@ -12,7 +12,7 @@ const cardTitle = '地下鉄の時間をお知らせします'
 // const img = 'https://ridehailer.com/resources/card-images/race-car-large.png';
 
 
-const getNearestTimeFromNow = () => {
+const getCurrentSubWayTime = () => {
   const now = dayjs().tz();
   let minute;
   let resultText;
@@ -28,7 +28,7 @@ const getNearestTimeFromNow = () => {
       resultText = `${station}の次の電車は\n${now.hour()}時${minute}分です`;
     }
   });
-  return resultText ? resultText : '電車の時間を見つけられませんでした';
+  return resultText ?? '電車の時間を見つけられませんでした';
 };
 
 const LaunchRequestHandler = {
